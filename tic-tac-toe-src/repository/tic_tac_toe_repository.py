@@ -40,7 +40,7 @@ class TikTakToeRepository:
     def verifica_castigatorul_jocului(self, tabela):
         numar_x = tabela.count('X')
         numar_0 = tabela.count('0')
-
+        print("Yes")
         if not (
                 (numar_x == numar_0 or numar_x == numar_0 + 1 or numar_x + 1 == numar_0 or numar_0 == numar_x + 1)
         ):
@@ -48,21 +48,17 @@ class TikTakToeRepository:
 
         matrice_tabela = [tabela[i:i + 3] for i in range(0, len(tabela), 3)]
 
-        if matrice_tabela[0][0] == matrice_tabela[1][1] == matrice_tabela[2][2] and matrice_tabela[0][0] not in [None,
-                                                                                                                 ' ']:
+        if matrice_tabela[0][0] == matrice_tabela[1][1] == matrice_tabela[2][2] and matrice_tabela[0][0] in ['X','0']:
             return matrice_tabela[0][0]
-        if matrice_tabela[0][2] == matrice_tabela[1][1] == matrice_tabela[2][0] and matrice_tabela[0][2] not in [None,
-                                                                                                                 ' ']:
+        if matrice_tabela[0][2] == matrice_tabela[1][1] == matrice_tabela[2][0] and matrice_tabela[0][2] in ['X', '0']:
             return matrice_tabela[0][2]
 
         for i in range(3):
-            if matrice_tabela[i][0] == matrice_tabela[i][1] == matrice_tabela[i][2] and matrice_tabela[i][0] not in [
-                None, ' ']:
+            if matrice_tabela[i][0] == matrice_tabela[i][1] == matrice_tabela[i][2] and matrice_tabela[i][0] in ['X', '0']:
                 return matrice_tabela[i][0]
 
         for i in range(3):
-            if matrice_tabela[0][i] == matrice_tabela[1][i] == matrice_tabela[2][i] and matrice_tabela[0][i] not in [
-                None, ' ']:
+            if matrice_tabela[0][i] == matrice_tabela[1][i] == matrice_tabela[2][i] and matrice_tabela[0][i] in ['X', '0']:
                 return matrice_tabela[0][i]
 
         return None

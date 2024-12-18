@@ -1,4 +1,4 @@
-from domain.tic_tac_toe_game import TikTakToeGame
+from tic_tac_toe_game import TikTakToeGame
 
 class TikTakToeGameStatus:
     def __init__(self, game:TikTakToeGame, status, winner):
